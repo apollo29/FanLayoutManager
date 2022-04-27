@@ -14,9 +14,20 @@ Cleveroad gladly shares its creation with everyone who wants to add some visual 
 Using Fan Layout Manager you can implement the horizontal list, the items of which move like fan blades (in a circular way of a radius to your choice). To give a slightly chaotical effect to the motion, it’s possible to set an angle for the list items. So, every implementation of the library can be unique.
 
 ### Installation ###
-by Gradle:
+Add it in your root build.gradle at the end of repositories:
 ```groovy
-    implementation 'com.cleveroad:fan-layout-manager:2.0.0'
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Add the dependency:
+```groovy
+    dependencies {
+        implementation 'com.github.apollo29:FanLayoutManager:2.0.0'
+    }
 ```
 ### Setup and usage ###
 Use default FanLayoutManager in code:
