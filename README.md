@@ -1,4 +1,5 @@
-# FanLayoutManager [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# FanLayoutManager [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![](https://jitpack.io/v/apollo29/FanLayoutManager.svg)](https://jitpack.io/#apollo29/FanLayoutManager)
+
 ![Header image](/images/header.jpg)
 
 ## Welcome to Fan Layout Manager for Android original by Cleveroad updated by Apollo29

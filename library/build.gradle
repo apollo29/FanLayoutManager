@@ -1,41 +1,47 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'de.nanogiants.android-versioning'
-    id 'digital.wup.android-maven-publish'
+    id 'maven-publish'
 }
 
 android {
+    namespace = 'com.github.apollo29'
     compileSdkVersion 31
     defaultConfig {
         minSdkVersion 28
         targetSdkVersion 31
         versionCode versioning.getVersionCode()
         versionName "$version"
-        archivesBaseName = "fanLayoutManager"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
+
     versioning {
         excludeBuildTypes = "debug"
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            mavenAar(MavenPublication) {
+                from components.release
+                groupId 'com.github.apollo29'
+                artifactId 'FanLayoutManager'
+                version = "$version"
+            }
+        }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }
