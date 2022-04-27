@@ -19,6 +19,7 @@ Using Fan Layout Manager you can implement the horizontal list, the items of whi
 
 Version | Changes
 ---     | ---
+v.2.0.0 | <ul><li>Update to androidx</li><li>Add kotlin support</li></ul>
 v.1.0.5 | <ul><li>Fix issue with reset position when using Picasso</li><li>Update versions of support library and build tools</li></ul>
 v.1.0.4 | <ul><li> Fix issue with notifyDataSetChanged</li></ul>
 v.1.0.3 |  <ul><li>Fix issue with empty list</li></ul>
