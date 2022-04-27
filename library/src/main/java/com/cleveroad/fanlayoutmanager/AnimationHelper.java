@@ -2,10 +2,11 @@ package com.cleveroad.fanlayoutmanager;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Collection;
 
@@ -66,7 +67,7 @@ interface AnimationHelper {
      * Rotate view from current to custom angle.
      *
      * @param view     view to rotate
-     * @param angle   rotate angle
+     * @param angle    rotate angle
      * @param listener animator listener to check start or end animation
      */
     void rotateView(View view, float angle, @Nullable Animator.AnimatorListener listener);

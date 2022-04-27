@@ -1,16 +1,15 @@
 package com.cleveroad.testrecycler.ui.fragments.main_fragment;
 
 import android.animation.Animator;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.RecyclerView;
-import android.transition.Fade;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cleveroad.fanlayoutmanager.FanLayoutManager;
 import com.cleveroad.fanlayoutmanager.FanLayoutManagerSettings;
@@ -57,7 +56,7 @@ public class MainFragment extends Fragment {
                 .withViewWidthDp(120)
                 .build();
 
-        mFanLayoutManager = new FanLayoutManager(getContext(), fanLayoutManagerSettings);
+        mFanLayoutManager = new FanLayoutManager(requireContext(), fanLayoutManagerSettings);
 
         recyclerView.setLayoutManager(mFanLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -79,11 +78,7 @@ public class MainFragment extends Fragment {
 
                         @Override
                         public void onAnimationEnd(Animator animator) {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                onClick(view, mFanLayoutManager.getSelectedItemPosition());
-                            } else {
-                                onClick(mFanLayoutManager.getSelectedItemPosition());
-                            }
+                            onClick(mFanLayoutManager.getSelectedItemPosition());
                         }
 
                         @Override
@@ -111,23 +106,6 @@ public class MainFragment extends Fragment {
             }
         });
 
-    }
-
-    @android.support.annotation.RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void onClick(View view, int pos) {
-        FullInfoTabFragment fragment = FullInfoTabFragment.newInstance(mAdapter.getModelByPos(pos));
-
-        fragment.setSharedElementEnterTransition(new SharedTransitionSet());
-        fragment.setEnterTransition(new Fade());
-        setExitTransition(new Fade());
-        fragment.setSharedElementReturnTransition(new SharedTransitionSet());
-
-        getActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .addSharedElement(view, "shared")
-                .replace(R.id.root, fragment)
-                .addToBackStack(null)
-                .commit();
     }
 
     public void onClick(int pos) {

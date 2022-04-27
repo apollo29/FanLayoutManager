@@ -1,9 +1,10 @@
 package com.cleveroad.fanlayoutmanager;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * LinearSmoothScroller to show view in the middle of the screen.

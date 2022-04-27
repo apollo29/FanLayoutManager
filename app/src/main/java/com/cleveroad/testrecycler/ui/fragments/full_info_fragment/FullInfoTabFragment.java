@@ -5,17 +5,18 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toolbar;
+
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cleveroad.testrecycler.R;
 import com.cleveroad.testrecycler.models.AthleticModel;
@@ -58,9 +59,9 @@ public class FullInfoTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_full_info, container, false);
-        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        ivPhoto = (ImageView) view.findViewById(R.id.ivPhoto);
-        rvAthletics = (RecyclerView) view.findViewById(R.id.rvAthletics);
+        toolbar = view.findViewById(R.id.toolbar);
+        ivPhoto = view.findViewById(R.id.ivPhoto);
+        rvAthletics = view.findViewById(R.id.rvAthletics);
         return view;
     }
 

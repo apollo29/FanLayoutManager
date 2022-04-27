@@ -3,12 +3,13 @@ package com.cleveroad.testrecycler.ui.fragments.main_fragment;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.transition.ChangeBounds;
 import android.transition.ChangeImageTransform;
 import android.transition.ChangeTransform;
 import android.transition.TransitionSet;
 import android.util.AttributeSet;
+
+import androidx.annotation.RequiresApi;
 
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

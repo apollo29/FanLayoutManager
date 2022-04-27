@@ -6,12 +6,13 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Collection;
 import java.util.Random;
@@ -1242,7 +1243,7 @@ public class FanLayoutManager extends RecyclerView.LayoutManager {
             isCollapsed = in.readInt() == 1;
             isSelected = in.readInt() == 1;
             //noinspection unchecked
-            mRotation = (SparseArray<Float>) in.readSparseArray(SparseArray.class.getClassLoader());
+            mRotation = in.readSparseArray(SparseArray.class.getClassLoader());
         }
 
         public SavedState(FanLayoutManager.SavedState other) {
@@ -1263,7 +1264,7 @@ public class FanLayoutManager extends RecyclerView.LayoutManager {
             dest.writeInt(isCollapsed ? 1 : 0);
             dest.writeInt(isSelected ? 1 : 0);
             //noinspection unchecked
-            dest.writeSparseArray((SparseArray)mRotation);
+            dest.writeSparseArray(mRotation);
         }
     }
 

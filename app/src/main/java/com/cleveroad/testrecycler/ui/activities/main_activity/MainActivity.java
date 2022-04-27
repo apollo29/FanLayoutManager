@@ -2,8 +2,9 @@ package com.cleveroad.testrecycler.ui.activities.main_activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.cleveroad.testrecycler.R;
 import com.cleveroad.testrecycler.ui.fragments.main_fragment.MainFragment;
